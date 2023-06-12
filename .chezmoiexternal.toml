@@ -1,11 +1,11 @@
 [".config/nvim"]
 type = "archive"
-url = "https://github.com/NvChad/NvChad/archive/master.tar.gz"
+url = "https://github.com/NvChad/NvChad/archive/refs/heads/v2.0.zip"
 exact = false
 stripComponents = 1
 refreshPeriod = "168h"
 
-[".tmux/plugins/tpm"]
+[".config/tmux/plugins/tpm"]
 type = "archive"
 url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
 exact = true
