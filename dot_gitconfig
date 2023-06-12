@@ -7,3 +7,5 @@
 	default = simple
 [merge]
 	ff = only
+[pull]
+	ff = only
