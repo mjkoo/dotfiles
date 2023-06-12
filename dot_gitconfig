@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Maxwell Koo
+	email = mjkoo90@gmail.com
+[push]
+	default = simple
+[merge]
+	ff = only
