@@ -18,3 +18,8 @@ url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrain
 exact = true
 refreshPeriod = "168h"
 include = ["*.ttf"]
+
+[".gdbinit-gef.py"]
+type = "file"
+url = "https://gef.blah.cat/py"
+refreshPeriod = "168h"
