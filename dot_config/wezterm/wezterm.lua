@@ -3,11 +3,16 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.color_scheme = "Dracula (Official)"
-config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = true
 config.font_size = 10.0
+config.color_scheme = "Dracula (Official)"
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.use_fancy_tab_bar = false
+config.window_padding = {
+	left = "0cell",
+	right = "1cell",
+	top = "0cell",
+	bottom = "0cell",
+}
 
 config.keys = {
 	{
