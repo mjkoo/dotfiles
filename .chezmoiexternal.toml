@@ -23,3 +23,13 @@ include = ["*.ttf"]
 type = "file"
 url = "https://gef.blah.cat/py"
 refreshPeriod = "168h"
+
+[".config/wezterm/colors/dracula.toml"]
+type = "file"
+url = "https://raw.githubusercontent.com/dracula/wezterm/main/dracula.toml"
+refreshPeriod = "168h"
+
+[".config/rofi/config.rasi"]
+type = "file"
+url = "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi"
+refreshPeriod = "168h"
