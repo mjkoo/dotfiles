@@ -32,5 +32,13 @@ threshold = 20
 filter = "dark16"
 
 [[entry]]
+template = "colors"
+target = "~/.cache/wal/colors"
+
+[[entry]]
+template = "colors.json"
+target = "~/.cache/wal/colors.json"
+
+[[entry]]
 template = "Xresources"
 target = "~/.Xresources"
