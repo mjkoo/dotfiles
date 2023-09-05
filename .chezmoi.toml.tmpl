@@ -1,0 +1,16 @@
+{{- if stdinIsATTY -}}
+  {{- $gui := promptBoolOnce . "gui" "Configure GUI programs" -}}
+  {{- $i3 := promptBoolOnce . "i3" "Configure i3 window manager" -}}
+  {{- $nvim := promptBoolOnce . "nvim" "Configure neovim" -}}
+
+  [data]
+    profiles = [
+      "base",
+      {{ if $gui }}"gui",{{ end }}
+      {{ if $i3 }}"i3",{{ end }}
+      {{ if $nvim }}"nvim",{{ end }}
+  ]
+{{- else -}}
+  [data]
+    profiles = ["base"]
+{{- end -}}

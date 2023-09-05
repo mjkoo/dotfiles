@@ -1,0 +1,6 @@
+{{ if not (has "nvim" .profiles) }}
+.config/nvim/**
+{{ end }}
+{{ if not (has "desktop" .profiles) }}
+.config/wezterm/**
+{{ end }}
