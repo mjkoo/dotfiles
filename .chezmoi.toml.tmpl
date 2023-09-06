@@ -5,12 +5,8 @@
 
   [data]
     profiles = [
-      "base",
       {{ if $gui }}"gui",{{ end }}
       {{ if $i3 }}"i3",{{ end }}
       {{ if $nvim }}"nvim",{{ end }}
   ]
-{{- else -}}
-  [data]
-    profiles = ["base"]
 {{- end -}}

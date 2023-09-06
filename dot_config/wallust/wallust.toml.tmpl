@@ -39,6 +39,8 @@ target = "~/.cache/wal/colors"
 template = "colors.json"
 target = "~/.cache/wal/colors.json"
 
+{{ if has "gui" .profiles}}
 [[entry]]
 template = "Xresources"
 target = "~/.Xresources"
+{{ end }}

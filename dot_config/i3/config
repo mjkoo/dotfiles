@@ -28,6 +28,8 @@ bar {
 
 gaps inner 10px
 smart_gaps on
+default_border pixel 1
+default_floating_border pixel 1
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -41,7 +43,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+tiling_drag modifier
 
 # start a terminal
 bindsym $mod+Return exec wezterm
@@ -178,5 +180,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id lxsession
 exec --no-startup-id picom -bc
-
-
+exec --no-startup-id xset s 0 0
+exec --no-startup-id xset -dpms

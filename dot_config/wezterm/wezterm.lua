@@ -2,16 +2,17 @@ local wezterm = require("wezterm")
 
 local config = {}
 
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font("Fira Code Nerd Font")
 config.font_size = 10.0
 config.color_scheme = "Dracula (Official)"
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "RESIZE"
 config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
-	left = "0cell",
-	right = "1cell",
-	top = "0cell",
-	bottom = "0cell",
+	left = "4px",
+	right = "4px",
+	top = "4px",
+	bottom = "4px",
 }
 
 config.disable_default_key_bindings = true
