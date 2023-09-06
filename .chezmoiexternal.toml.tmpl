@@ -1,3 +1,15 @@
+[".gdbinit-gef.py"]
+type = "file"
+url = "https://gef.blah.cat/py"
+refreshPeriod = "168h"
+
+[".config/tmux/plugins/tpm"]
+type = "archive"
+url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+
 {{ if has "nvim" .profiles }}
 #[".config/nvim"]
 #type = "archive"
@@ -7,31 +19,14 @@
 #refreshPeriod = "168h"
 {{ end }}
 
-[".config/tmux/plugins/tpm"]
-type = "archive"
-url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
-exact = true
-stripComponents = 1
-refreshPeriod = "168h"
-
-[".local/share/fonts"]
-type = "archive"
-url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip"
-exact = true
-refreshPeriod = "168h"
-include = ["*.ttf"]
-
-[".gdbinit-gef.py"]
+{{ if has "gui" .profiles }}
+[".config/rofi/config.rasi"]
 type = "file"
-url = "https://gef.blah.cat/py"
+url = "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi"
 refreshPeriod = "168h"
 
 [".config/wezterm/colors/dracula.toml"]
 type = "file"
 url = "https://raw.githubusercontent.com/dracula/wezterm/main/dracula.toml"
 refreshPeriod = "168h"
-
-[".config/rofi/config.rasi"]
-type = "file"
-url = "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi"
-refreshPeriod = "168h"
+{{ end }}

@@ -16,6 +16,7 @@ config.window_padding = {
 }
 
 config.disable_default_key_bindings = true
+config.key_map_preference = "Physical"
 config.keys = {
 	{
 		key = "c",
