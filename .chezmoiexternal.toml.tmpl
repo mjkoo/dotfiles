@@ -30,6 +30,15 @@ url = "https://raw.githubusercontent.com/dracula/pywal/master/dracula.json"
 refreshPeriod = "168h"
 {{ end }}
 
+{{ if has "zsh" .profiles }}
+[".config/zsh/antidote"]
+type = "archive"
+url = "https://github.com/mattmc3/antidote/archive/refs/heads/main.zip"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+{{ end }}
+
 {{ if has "gui" .profiles }}
 [".config/rofi/config.rasi"]
 type = "file"

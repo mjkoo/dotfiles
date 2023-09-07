@@ -14,6 +14,11 @@
 .config/tmux/**
 {{ end }}
 
+{{ if not (has "zsh" .profiles) }}
+.zshenv
+.config/zsh/**
+{{ end }}
+
 {{ if not (has "i3" .profiles) }}
 .config/i3/**
 {{ end }}

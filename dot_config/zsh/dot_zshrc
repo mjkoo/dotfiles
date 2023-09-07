@@ -1,0 +1,13 @@
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
+export PISTOL_CHROMA_STYLE=dracula
+
+[ -f $HOME/.cache/wallust/sequences ] && cat $HOME/.cache/wallust/sequences
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
