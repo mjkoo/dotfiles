@@ -1,4 +1,4 @@
-setopt no_global_rcs
+unsetopt GLOBAL_RCS
 
 export EDITOR='nvim'
 export VISUAL='nvim'

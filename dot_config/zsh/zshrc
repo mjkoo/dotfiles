@@ -1,12 +1,60 @@
+# Global options
+unsetopt BEEP
+
+setopt AUTO_CD
+
+setopt EXTENDED_GLOB
+setopt GLOB_DOTS
+setopt GLOB_STAR_SHORT
+setopt NOMATCH
+
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
 
-[ -f $HOME/.cache/wallust/sequences ] && cat $HOME/.cache/wallust/sequences
+setopt MENU_COMPLETE
 
+setopt INTERACTIVE_COMMENTS
+
+# Completions
+autoload -Uz compinit
+zstyle ':completion:*' menu yes select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zmodload zsh/complist
+_comp_options+=(globdots)		# Include hidden files.
+zle_highlight=('paste:none')
+for dump in "${ZDOTDIR}/zcompdump"(N.mh+24); do
+    compinit
+done
+compinit -
+
+# Vi mode
+bindkey -v
+KEYTIMEOUT=1
+
+if [[ -o menucomplete ]]; then 
+  bindkey -M menuselect '^h' vi-backward-char
+  bindkey -M menuselect '^k' vi-up-line-or-history
+  bindkey -M menuselect '^l' vi-forward-char
+  bindkey -M menuselect '^j' vi-down-line-or-history
+  bindkey -M menuselect '^[[Z' vi-up-line-or-history
+fi
+
+bindkey -v '^?' backward-delete-char
+
+# Plugins
+. "${ZDOTDIR}/antidote/antidote.zsh"
+antidote load "${ZDOTDIR}/zsh_plugins"
+
+# Integrations
+[ -f "${HOME}/.cache/wallust/sequences" ] && cat "${HOME}/.cache/wallust/sequences"
 eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
