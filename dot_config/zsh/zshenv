@@ -1,0 +1,11 @@
+setopt no_global_rcs
+
+export EDITOR='nvim'
+export VISUAL='nvim'
+export MANPAGER='nvim +Man!'
+
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE="${ZDOTDIR}/zsh_history"
+
+export PISTOL_CHROMA_STYLE='dracula'
