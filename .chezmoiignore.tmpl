@@ -1,9 +1,23 @@
+{{ if not (has "gdb" .profiles) }}
+.gdbinit
+{{ end }}
+
+{{ if not (has "lf" .profiles) }}
+.config/lf/**
+{{ end }}
+
 {{ if not (has "nvim" .profiles) }}
 .config/nvim/**
 {{ end }}
+
+{{ if not (has "tmux" .profiles) }}
+.config/tmux/**
+{{ end }}
+
 {{ if not (has "i3" .profiles) }}
 .config/i3/**
 {{ end }}
+
 {{ if not (has "gui" .profiles) }}
 .config/discord/**
 .config/picom/**

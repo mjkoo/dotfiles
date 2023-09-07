@@ -1,14 +1,9 @@
+{{ if has "gdb" .profiles }}
 [".gdbinit-gef.py"]
 type = "file"
 url = "https://gef.blah.cat/py"
 refreshPeriod = "168h"
-
-[".config/tmux/plugins/tpm"]
-type = "archive"
-url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
-exact = true
-stripComponents = 1
-refreshPeriod = "168h"
+{{ end }}
 
 {{ if has "nvim" .profiles }}
 #[".config/nvim"]
@@ -17,6 +12,22 @@ refreshPeriod = "168h"
 #exact = false
 #stripComponents = 1
 #refreshPeriod = "168h"
+{{ end }}
+
+{{ if has "tmux" .profiles }}
+[".config/tmux/plugins/tpm"]
+type = "archive"
+url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+refreshPeriod = "168h"
+{{ end }}
+
+{{ if has "wal" .profiles }}
+[".config/wal/colorschemes/dark/dracula.json"]
+type = "file"
+url = "https://raw.githubusercontent.com/dracula/pywal/master/dracula.json"
+refreshPeriod = "168h"
 {{ end }}
 
 {{ if has "gui" .profiles }}

@@ -1,12 +1,10 @@
-{{- if stdinIsATTY -}}
-  {{- $gui := promptBoolOnce . "gui" "Configure GUI programs" -}}
-  {{- $i3 := promptBoolOnce . "i3" "Configure i3 window manager" -}}
-  {{- $nvim := promptBoolOnce . "nvim" "Configure neovim" -}}
+[data]
+profiles = [
+  {{ if lookPath "gdb" }}"gdb",{{ end }}
+  {{ if lookPath "lf" }}"lf",{{ end }}
+  {{ if lookPath "nvim" }}"nvim",{{ end }}
+  {{ if lookPath "tmux" }}"tmux",{{ end }}
+  {{ if lookPath "wallust" }}"wal",{{ end }}
 
-  [data]
-    profiles = [
-      {{ if $gui }}"gui",{{ end }}
-      {{ if $i3 }}"i3",{{ end }}
-      {{ if $nvim }}"nvim",{{ end }}
-  ]
-{{- end -}}
+  {{ if lookPath "i3" }}"i3", "gui",{{ end }}
+]
